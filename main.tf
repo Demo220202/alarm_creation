@@ -7,7 +7,7 @@ resource "aws_cloudwatch_metric_alarm" "example" {
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "1"
   metric_name         = var.metric_name
-  namespace           = "AWS/EC2"
+  namespace           = "EC2"
   period              = "300"
   statistic           = "Average"
   threshold           = var.threshold
