@@ -18,5 +18,7 @@ resource "aws_cloudwatch_metric_alarm" "example" {
 
   alarm_description = "This metric monitors the ${var.metric_name} for instance ${var.instance_id}"
   actions_enabled   = true
-  alarm_actions     = [] # Add your SNS topic ARN or other action ARNs here if needed
+  alarm_actions     = [var.sns_topic_arn]
+  ok_actions        = [var.sns_topic_arn]
+  insufficient_data_actions = [var.sns_topic_arn]
 }
