@@ -17,7 +17,18 @@ variable "threshold" {
   description = "The threshold at which to trigger the alarm."
   type        = number
 }
+
 variable "region" {
   description = "The AWS region to use."
+  type        = string
+}
+
+variable "alarm_state" {
+  description = "The state in which to set the alarm."
+  type        = string
+}
+
+variable "sns_topic_arn" {
+  description = "The ARN of the SNS topic for alarm notifications."
   type        = string
 }
