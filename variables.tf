@@ -1,39 +1,47 @@
-variable "alarm_name" {
-  description = "The name of the CloudWatch alarm."
+variable "instance_name" {
+  description = "Name of the instance (EC2, RDS, etc.)"
+  type        = string
+}
+
+variable "sns_name" {
+  description = "Name of the SNS topic"
   type        = string
 }
 
 variable "metric_name" {
-  description = "The name of the CloudWatch metric."
-  type        = string
-}
-
-variable "instance_id" {
-  description = "The ID of the instance to monitor."
-  type        = string
-}
-
-variable "threshold" {
-  description = "The threshold at which to trigger the alarm."
-  type        = number
-}
-
-variable "region" {
-  description = "The AWS region to use."
-  type        = string
-}
-
-variable "alarm_state" {
-  description = "The state in which to set the alarm."
-  type        = string
-}
-
-variable "sns_topic_arn" {
-  description = "The ARN of the SNS topic for alarm notifications."
+  description = "Name of the metric"
   type        = string
 }
 
 variable "namespace" {
-  description = "The namespace of the CloudWatch metric."
+  description = "Namespace of the metric"
+  type        = string
+}
+
+variable "threshold" {
+  description = "Threshold for the alarm"
+  type        = number
+}
+
+variable "comparison_operator" {
+  description = "Comparison operator for the alarm"
+  type        = string
+  default     = "GreaterThanThreshold"
+}
+
+variable "evaluation_periods" {
+  description = "Number of evaluation periods"
+  type        = number
+  default     = 1
+}
+
+variable "period" {
+  description = "Period in seconds"
+  type        = number
+  default     = 300
+}
+
+variable "service_type" {
+  description = "Type of the service (EC2, RDS, etc.)"
   type        = string
 }
