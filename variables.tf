@@ -32,3 +32,8 @@ variable "sns_topic_arn" {
   description = "The ARN of the SNS topic for alarm notifications."
   type        = string
 }
+
+variable "namespace" {
+  description = "The namespace of the CloudWatch metric."
+  type        = string
+}
